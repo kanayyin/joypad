@@ -86,7 +86,6 @@ export default function SignupPage() {
       <div className="form-container">
         <h1>Create Your Account</h1>
 
-<<<<<<< HEAD
         <form className="signup-form" onSubmit={handleSubmit}>
         <input
             type="text"
@@ -123,15 +122,6 @@ export default function SignupPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-=======
-
-        <form className="signup-form">
-          <input type="email" className="form-input" placeholder="Email Address" />
-          <input type="text" className="form-input" placeholder="Phone Number" />
-          <input type="text" className="form-input" placeholder="First Name" />
-          <input type="text" className="form-input" placeholder="Last Name" />
-
->>>>>>> 48b172dce3a0a2f9f87fa2ad664a040a7ede7995
           <div className="password-container">
             <input
               type={showPassword ? "text" : "password"}

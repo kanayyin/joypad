@@ -2,8 +2,15 @@
 import "../../../styles/bookingformpromo.css";
 import React from "react";
 import Header from "../../header"; 
+import { useRouter } from "next/navigation"; // Import useRouter
 
 const BookingForm = () => {
+  const router = useRouter(); // Inisialisasi router
+
+  const handleNext = () => {
+    router.push("/pembayaranpromo"); // Navigasi ke halaman pembayaran
+  };
+
   return (
     <div>
       <Header />
@@ -50,7 +57,7 @@ const BookingForm = () => {
           </div>
           <div className="buttonGroup">
             <button className="customButton">BACK</button>
-            <button className="customButton">NEXT</button>
+            <button className="customButton" onClick={handleNext}>NEXT</button>
           </div>
         </div>
       </div>
