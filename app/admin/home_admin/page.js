@@ -153,6 +153,34 @@ const ReservationList = () => {
       time: '13:00-14:00',
       room: 'VVIP Room',
       payment: 'Success'
+    },
+    {
+      id: 'AHSBDA278F4',
+      date: '23/12/2024',
+      time: '22:00-23:00',
+      room: 'VIP Room',
+      payment: 'Success'
+    },
+    {
+      id: 'KJSG67SHEGS',
+      date: '30/12/2024',
+      time: '12:00-15:00',
+      room: 'Regular Room',
+      payment: 'Success'
+    },
+    {
+      id: 'UDH6FBETCU8',
+      date: '31/12/2024',
+      time: '12:00-15:00',
+      room: 'VVIP Room',
+      payment: 'Success'
+    },
+    {
+      id: 'IJFHT623HDT',
+      date: '20/12/2024',
+      time: '12:00-15:00',
+      room: 'Regular Room',
+      payment: 'Success'
     }
   ]);
 
@@ -228,8 +256,8 @@ const ReservationList = () => {
         <main className="w-full max-w-7xl px-4">
           <div className="mb-6 flex justify-between items-center">
             <h2 className="text-2xl font-semibold">Daftar Reservasi</h2>
-            <button className="px-4 py-2 rounded-[20px] text-white ">
-              + Tambah Reservasi
+            <button className="px-4 py-2 rounded-[20px] text-white " href="/add_admin">
+              <a href="/admin/add_admin">+ Tambah Reservasi</a>
             </button>
           </div>
           <div className="overflow-x-auto">

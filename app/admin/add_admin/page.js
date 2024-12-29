@@ -60,25 +60,25 @@ const ReservationList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-purple-50">
+    <div className="min-h-screen bg-white">
       <div className="fixed top-0 left-0 right-0 z-50">
         <Header_admin />
       </div>
-      <div className="flex justify-center pt-20">
+      <div className="flex justify-center pt-[100px]">
         <main className="w-full max-w-7xl px-4">
           <div className="bg-purple-100 rounded-3xl p-6 shadow-sm">
             <div className="mb-6 flex justify-between items-center">
               <h2 className="text-xl font-medium text-gray-700">Daftar Reservasi</h2>
               <div className="flex gap-2">
-                <button className="px-4 py-2 rounded-[20px] text-white bg-purple-400">
-                  Cancel
+                <button className="px-4 py-2 rounded-[20px] text-white bg-[#A98EB2]" >
+                  <a href="/admin/home_admin"> Cancel </a>
                 </button>
                 <button
                   onClick={handleAddReservation}
                   disabled={!isTableComplete}
                   className={`px-4 py-2 rounded-[20px] text-white ${
                     isTableComplete
-                      ? "bg-purple-400"
+                      ? "bg-[#A98EB2]"
                       : "bg-purple-200 cursor-not-allowed"
                   }`}
                 >
@@ -161,29 +161,29 @@ const ReservationList = () => {
 const RoomPopup = ({ onSelectRoom, onClose }) => (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-white rounded-2xl p-6 w-[400px] max-w-[90%]">
-      <h2 className="text-xl font-semibold mb-4">Select Room</h2>
+      <h2 className="text-xl font-semibold mb-4 text-black">Select Room</h2>
       <div className="flex flex-col gap-2">
         <button
           onClick={() => onSelectRoom("Regular")}
-          className="px-4 py-2 rounded-[20px] bg-purple-400 text-white"
+          className="px-4 py-2 rounded-[20px] bg-[#A98EB2] text-white"
         >
           Regular Room
         </button>
         <button
           onClick={() => onSelectRoom("VIP")}
-          className="px-4 py-2 rounded-[20px] bg-purple-400 text-white"
+          className="px-4 py-2 rounded-[20px] bg-[#A98EB2] text-white"
         >
           VIP Room
         </button>
         <button
           onClick={() => onSelectRoom("VVIP")}
-          className="px-4 py-2 rounded-[20px] bg-purple-400 text-white"
+          className="px-4 py-2 rounded-[20px] bg-[#A98EB2] text-white"
         >
           VVIP Room
         </button>
       </div>
       <div className="flex justify-end mt-4">
-        <button onClick={onClose} className="px-4 py-2 rounded-[20px] text-white bg-purple-400">
+        <button onClick={onClose} className="px-4 py-2 rounded-[20px] text-white bg-[#A98EB2]">
           Close
         </button>
       </div>
@@ -194,14 +194,14 @@ const RoomPopup = ({ onSelectRoom, onClose }) => (
 const CalendarPopup = ({ onSelectDate, onClose }) => (
   <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div className="bg-white rounded-2xl p-6 w-[400px] max-w-[90%]">
-      <h2 className="text-xl font-semibold mb-4">Select Date</h2>
+      <h2 className="text-xl font-semibold mb-4 text-black">Select Date</h2>
       <input
         type="date"
         onChange={(e) => onSelectDate(e.target.value)}
-        className="w-full p-2 border rounded-[10px]"
+        className="w-full p-2 border rounded-[10px] text-gray"
       />
       <div className="flex justify-end mt-4">
-        <button onClick={onClose} className="px-4 py-2 rounded-[20px] text-white bg-purple-400">
+        <button onClick={onClose} className="px-4 py-2 rounded-[20px] text-white bg-[#A98EB2]">
           Close
         </button>
       </div>
@@ -216,14 +216,14 @@ const TimePopup = ({ onSelectTime, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-2xl p-6 w-[400px] max-w-[90%]">
-        <h2 className="text-xl font-semibold mb-4">Select Time</h2>
+        <h2 className="text-xl font-semibold mb-4 text-black">Select Time</h2>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-700 mb-1">From</label>
           <input
             type="time"
             value={fromTime}
             onChange={(e) => setFromTime(e.target.value)}
-            className="w-full p-2 border rounded-[10px]"
+            className="w-full p-2 border rounded-[10px] text-gray"
           />
         </div>
         <div className="mb-4">
@@ -232,7 +232,7 @@ const TimePopup = ({ onSelectTime, onClose }) => {
             type="time"
             value={untilTime}
             onChange={(e) => setUntilTime(e.target.value)}
-            className="w-full p-2 border rounded-[10px]"
+            className="w-full p-2 border rounded-[10px] text-gray"
           />
         </div>
         <div className="flex justify-end gap-2">
@@ -241,11 +241,11 @@ const TimePopup = ({ onSelectTime, onClose }) => {
               onSelectTime(fromTime, untilTime);
               onClose();
             }}
-            className="px-4 py-2 rounded-[20px] text-white bg-purple-400"
+            className="px-4 py-2 rounded-[20px] text-white bg-[#A98EB2]"
           >
             Confirm
           </button>
-          <button onClick={onClose} className="px-4 py-2 rounded-[20px] text-white bg-purple-400">
+          <button onClick={onClose} className="px-4 py-2 rounded-[20px] text-white bg-[#A98EB2]">
             Close
           </button>
         </div>
@@ -262,7 +262,7 @@ const PaymentSuccessModal = ({ onClose }) => (
       <div className="flex justify-end">
         <button
           onClick={onClose}
-          className="px-4 py-2 rounded-[20px] text-white bg-purple-400"
+          className="px-4 py-2 rounded-[20px] text-white bg-[#A98EB2]"
         >
           Close
         </button>

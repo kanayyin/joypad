@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "loadash": "^1.0.0",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",
     "lucide-react": "^0.469.0",

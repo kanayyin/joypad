@@ -147,10 +147,13 @@
 
 /* Modal and Popup Buttons */
 button {
-  cursor: pointer;
+  padding: 8px 12px;
+    background-color: #A98EB2;
+  color: white;
+  padding: 10px 20px;
   border: none;
-  outline: none;
-  transition: background-color 0.2s ease-in-out;
+  border-radius: 25px;
+  cursor: pointer;
 }
 
 button:hover {
