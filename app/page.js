@@ -4,7 +4,6 @@ export default function RootPage() {
   // Redirect ke halaman login
   redirect("/login");
 
-<<<<<<< HEAD
 export default function HomePage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -158,7 +157,4 @@ export default function HomePage() {
       <Footer />
     </div>
   );
-=======
-  return null;
->>>>>>> upstream/main
 }

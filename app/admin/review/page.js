@@ -1,8 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import "../../../styles/review.css";
-import Header from "../../header.js";
-import Footer from "../../footer.js";
+import Header_admin from '@/app/header_admin';
 
 const Review = () => {
   const [showReviewModal, setShowReviewModal] = useState(false);
@@ -214,7 +213,7 @@ const Review = () => {
 
   return (
     <div className="min-h-screen bg-purple-50">
-      <Header />
+      <Header_admin />
       <div className='rating-container'>
       <main className="max-w-4xl mx-auto p-6">
         <section className="rating-card mb-8">
@@ -252,17 +251,10 @@ const Review = () => {
           ))}
         </section>
 
-        <button
-          onClick={() => setShowReviewModal(true)}
-          className="button"
-        >
-          <span className="text-xl">✎</span>
-          Write a review
-        </button>
+    
         {showReviewModal && <ReviewModal />}
       </main>
       </div>
-      <Footer />
     </div>
   );
 };
