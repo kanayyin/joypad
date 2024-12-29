@@ -1,10 +1,25 @@
-import { redirect } from "next/navigation";
+"use client";
+import React, { useState } from "react";
+import "../../../styles/globals.css";
+import Header from "../../header";
+import Footer from "../../footer";
+import Link from "next/link";
+import Calendar from "react-calendar";
+import "react-calendar";
+// Fungsi untuk generate opsi waktu
+function generateTimeOptions() {
+  const times = [];
+  for (let hour = 10; hour <= 19; hour++) {
+    const time = `${hour}:00`;
+    times.push(
+      <option key={time} value={time}>
+        {time}
+      </option>
+    );
+  }
+  return times;
+}
 
-export default function RootPage() {
-  // Redirect ke halaman login
-  redirect("/login");
-
-<<<<<<< HEAD
 export default function HomePage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [showCalendar, setShowCalendar] = useState(false);
@@ -96,69 +111,10 @@ export default function HomePage() {
       </section>
 
       {/* Bagian Reviews */}
-   <section id="ratingbox" className="rating">
-        <div className="rating-left">
-          <div className="rating-tittle">Rating</div>
-          <div className="rating-score">
-            <span className="score-number">4.5</span>
-            <span className="score-stars">★</span>
-          </div>
-          <div className="rating-reviews">Based on 150 reviews</div>
-          <div className="rating-breakdown">
-            {[5, 4, 3, 2, 1].map((stars, index) => (
-              <div key={index} className="breakdown-row">
-                <span className="stars-row">
-                  {"★".repeat(stars).padEnd(5, "☆")}
-                </span>
-                <div className="bar-container">
-                  <div
-                    className="bar-fill"
-                    style={{ width: `${[93, 42, 14, 1, 0][index]}%` }}
-                  ></div>
-                </div>
-                <span className="review-count-row">
-                  {[93, 42, 14, 1, 0][index]}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="review-section">
-          {[{
-            username: "Fadilahrtk",
-            stars: 5,
-            image: "/image/review1.png",
-            title: "Excellent booking experience!",
-            text: "This game house reservation platform is very easy to use and responsive. Fast booking process, intuitive interface, and a wide selection of games. The payment system is secure, and customer support is very helpful. I can immediately choose the game room according to my wishes without any hassle."
-          }, {
-            username: "Xavierzh",
-            stars: 5,
-            image: "/image/review2.jpg",
-            title: "Excellent Experience, Highly Recommend!",
-            text: "Highly recommend this place to anyone looking for a fun and hassle-free gaming experience! I had an amazing time at the gaming venue! The setup was flawless, with all the equipment working perfectly, and the atmosphere was vibrant and exciting."
-          }].map((review, index) => (
-            <div key={index} className="review">
-              <div className="profile-review">
-                <img
-                  src={review.image}
-                  alt="foto"
-                  className="profile-review"
-                />
-                <span className="username-review">{review.username}</span>
-                <span className="stars-review">{"★".repeat(review.stars)}</span>
-              </div>
-              <p><strong>{review.title}</strong></p>
-              <p>{review.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      
 
       {/* Bagian Footer */}
       <Footer />
     </div>
   );
-=======
-  return null;
->>>>>>> upstream/main
 }

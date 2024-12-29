@@ -1,11 +1,15 @@
 /* Footer Styling */
 .footer {
-    background: linear-gradient(to bottom, #a98eb2, #82588e);
+  background: linear-gradient(
+    180deg,
+    rgba(169, 142, 178, 0.55) 0%,
+    rgba(62, 39, 70, 0.55) 100%
+  );
     color: #fff;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 30px;
     font-size: 14px;
     flex-wrap: wrap;
   }
