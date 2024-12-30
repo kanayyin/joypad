@@ -12,7 +12,7 @@ const PaymentSuccessModal = ({ onClose }) => {
         <div className="flex justify-end">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-[20px] text-white bg-pink-400"
+            className="px-4 py-2 rounded-[20px] text-white bg-mauve-400"
           >
             Close
           </button>
@@ -51,7 +51,7 @@ const ExtendModal = ({ reservation, onClose, onConfirm }) => {
         {step === 1 ? (
           <div className="mb-4">
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">From</label>
+              <label className="block text-sm font-medium text-mauve-700 mb-1">From</label>
               <input
                 type="time"
                 value={fromTime}
@@ -61,7 +61,7 @@ const ExtendModal = ({ reservation, onClose, onConfirm }) => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-sm font-medium text-gray-700 mb-1">Until</label>
+              <label className="block text-sm font-medium text-mauve-700 mb-1">Until</label>
               <input
                 type="time"
                 value={untilTime}
@@ -85,14 +85,14 @@ const ExtendModal = ({ reservation, onClose, onConfirm }) => {
         <div className="flex justify-end gap-2">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-[20px] bg-gray-200"
+            className="px-4 py-2 rounded-[20px] bg-mauve-200"
           >
             Cancel
           </button>
           <button
             onClick={handleSubmit}
             disabled={step === 1 && !untilTime}
-            className="px-4 py-2 rounded-[20px] text-white bg-pink-400 disabled:bg-pink-200"
+            className="px-4 py-2 rounded-[20px] text-white bg-mauve-400 disabled:bg-mauve-200"
           >
             {step === 1 ? 'Continue to Payment' : 'Confirm Payment'}
           </button>
@@ -107,20 +107,21 @@ const DeleteConfirmationModal = ({ isOpen, onClose, onConfirm }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-2xl p-6 w-[400px] max-w-[90%] text-[#374151]">
-        <h2 className="text-xl font-semibold mb-4">
+
+      <div className="bg-white rounded-2xl p-6 w-[500px] max-w-[90%] text-mauve">
+        <h2 className="text-xl font-semibold mb-4 text-center">
           Are you sure you want to delete this?
         </h2>
         <div className="flex justify-end gap-2">
           <button 
             onClick={onClose}
-            className="px-4 py-2 rounded-[20px] bg-gray-200"
+            className="px-4 py-2 rounded-[20px] bg-mauve-200"
           >
             No
           </button>
           <button 
             onClick={onConfirm}
-            className="px-4 py-2 rounded-[20px] text-white bg-pink-400"
+            className="px-4 py-2 rounded-[20px] text-white bg-mauve-400"
           >
             Yes
           </button>
@@ -151,6 +152,34 @@ const ReservationList = () => {
       date: '21/12/2024',
       time: '13:00-14:00',
       room: 'VVIP Room',
+      payment: 'Success'
+    },
+    {
+      id: 'AHSBDA278F4',
+      date: '23/12/2024',
+      time: '22:00-23:00',
+      room: 'VIP Room',
+      payment: 'Success'
+    },
+    {
+      id: 'KJSG67SHEGS',
+      date: '30/12/2024',
+      time: '12:00-15:00',
+      room: 'Regular Room',
+      payment: 'Success'
+    },
+    {
+      id: 'UDH6FBETCU8',
+      date: '31/12/2024',
+      time: '12:00-15:00',
+      room: 'VVIP Room',
+      payment: 'Success'
+    },
+    {
+      id: 'IJFHT623HDT',
+      date: '20/12/2024',
+      time: '12:00-15:00',
+      room: 'Regular Room',
       payment: 'Success'
     }
   ]);
@@ -227,8 +256,8 @@ const ReservationList = () => {
         <main className="w-full max-w-7xl px-4">
           <div className="mb-6 flex justify-between items-center">
             <h2 className="text-2xl font-semibold">Daftar Reservasi</h2>
-            <button className="px-4 py-2 rounded-[20px] text-white ">
-              + Tambah Reservasi
+            <button className="px-4 py-2 rounded-[20px] text-white " href="/add_admin">
+              <a href="/admin/add_admin">+ Tambah Reservasi</a>
             </button>
           </div>
           <div className="overflow-x-auto">
@@ -254,7 +283,7 @@ const ReservationList = () => {
                     <td className="p-4">
                       <button 
                         onClick={() => handleDeleteClick(reservation.id)}
-                        className="mr-2 p-2 hover:bg-gray-100 rounded-full"
+                        className="mr-2 p-2 hover:bg-mauve-100 rounded-full"
                       >
                         🗑️
                       </button>
