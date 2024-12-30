@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "../../../styles/pembayaranpromo.css";
+import "../../../styles/pembayaran.css";
 import Header from "../../header";
 const BookingForm = () => {
   const [showPopup, setShowPopup] = useState(false);
